@@ -1,7 +1,7 @@
 # Optimize-Win10
 Optimize-Win10 es un script que optimiza tu windows 10 para acelerar su rendimiento, desactivando cosas como la telemetría de windows que afectan en un porcentaje muy alto al consumo de memoria RAM y CPU
 
-![PNG](acelerar-pc-windows-10-1280x720.jpg)
+![JPG](image.jpg)
 
 <div align="center">
   
