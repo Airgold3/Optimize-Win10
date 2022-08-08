@@ -1,4 +1,4 @@
-echo By: Airgold3#7061 & https://github.com/Airgold3/
+REM By: Airgold3#7061 & https://github.com/Airgold3/
 @echo off
 
 MODE con:cols=80 lines=40
@@ -10,7 +10,7 @@ echo  --> Verificando permisos
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 )
 
-echo --> Si se establece el indicador de error, no tenemos administrador.
+REM --> Si se establece el indicador de error, no tenemos administrador.
 if '%errorlevel%' NEQ '0' (
     echo Solicitando privilegios administrativos...
     goto UACPrompt
@@ -36,31 +36,31 @@ if '%errorlevel%' NEQ '0' (
     echo UTF8 en español
     chcp 65001
 
-    echo Telemetría de Windows
+    echo Desactivando Telemetría de Windows
     sc config DiagTrack start= disabled
     net stop "DiagTrack"
 
-    echo Servicio WAP
+    echo Desactivando Servicio WAP
     sc config dmwappushservice start= disabled
     net stop "dmwappushservice"
 
-    echo Fax
+    echo Desactivando Servicio Fax
     sc config fax start= disabled
     net stop "Fax"
 
-    echo Mapas Descargados
+    echo Desactivando Servicio de Mapas Descargados
     sc config MapsBroker start= disabled
     net stop "MapsBroker"
 
-    echo Servicio de Red Xbox Live
+    echo Desactivando Servicio de Red Xbox Live
     sc config XboxNetApiSvc start= disabled
     net stop "XboxNetApiSvc"
 
-    echo Servicio de manejamiento de xbox
+    echo Desactivando Servicio de manejamiento de xbox
     sc config XboxGipSvc start= disabled
     net stop "XboxGipSvc"
 
-    echo Servicio de manejamiento de xbox
+    echo Desactivando Servicio de manejamiento de xbox
     sc config XblGameSave start= disabled
     net stop "XblGameSave"
 
@@ -108,9 +108,8 @@ if '%errorlevel%' NEQ '0' (
     timeout /t 3 /nobreak
 
     echo Plan de alto rendimiento de energía 
-    powercfg -import C:/energia.pow 7c21b0ce-a9d9-4961-b7da-d696e49dc373
-    powercfg -setactive 7c21b0ce-a9d9-4961-b7da-d696e49dc373
-    powercfg -changename 7c21b0ce-a9d9-4961-b7da-d696e49dc373 "Plan de energia de Alto Rendimiento" "Opciones de alto rendimiento para tu ordenador"
+    powercfg -setactive e9a42b02-d5df-448d-aa00-03f14749eb61
+    powercfg -changename e9a42b02-d5df-448d-aa00-03f14749eb61 "Plan de Alto Rendimiento" "Opciones de alto rendimiento para tu ordenador"
     
     set /p AREYOUSURE= Para ver los cambios hechos es necesario reiniciar el ordenador. ¿Desea reiniciar ahora? (S/N)?
     if %AREYOUSURE%==s (
